@@ -53,7 +53,7 @@ pipeline {
         stage('Deploy to EKS') {
             steps {
                 sh '''
-                kubectl set image deployment/react-vite-deployment react-vite-container=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
+                kubectl set image deployment/react-vite-app react-vite-app=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
                 '''
             }
         }
